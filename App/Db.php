@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App;
 
 
@@ -11,7 +10,7 @@ class Db
 
     function __construct()
     {
-        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test', 'root', '131318');
+        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test;charset=UTF8', 'root', '131318');
     }
 
     public function execute($sql)
@@ -27,9 +26,8 @@ class Db
         $res = $sth->execute();
         if (false !== $res)
         {
-            return $sth->fetchAll();
+            return $sth->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\User');
         }
         return [];
     }
-
 }

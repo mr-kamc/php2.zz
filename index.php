@@ -4,5 +4,5 @@ require __DIR__ . '/autoload.php';
 
 $db = new \App\Db();
 
-$data = $db->query('SELECT * FROM foo');
+$data = $db->query('SELECT * FROM users');
 var_dump($data);
