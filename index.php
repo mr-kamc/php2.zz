@@ -6,3 +6,4 @@ $users = \App\Models\User::findAll();
 
 var_dump($users);
 
+
