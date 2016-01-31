@@ -2,12 +2,12 @@
 
 namespace App;
 
-class Db
+class Db extends Singleton
 {
 
     protected $dbh;
 
-    function __construct()
+    protected function __construct()
     {
         $config = Config::instance();
         $s = $this->dbh = new \PDO('mysql:host=' .$config->data['host']. ';dbname='.$config->data['dbname'].';

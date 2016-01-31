@@ -8,7 +8,7 @@ abstract class Model
 
     public static function findAll()
     {
-        $db = new Db();
+        $db = Db::instance();
         return $db->query(
             'SELECT * FROM ' . static::TABLE,
             static::class
@@ -17,7 +17,7 @@ abstract class Model
 
     public static function findOneById($id)
     {
-        $db = new Db();
+        $db = Db::instance();
         return $db->query(
             'SELECT * FROM ' . static::TABLE . ' WHERE id = :id',
             static::class, [':id' => $id]
@@ -26,7 +26,7 @@ abstract class Model
 
     public static  function findLastNews($num)
     {
-        $db = new Db();
+        $db = Db::instance();
         return $db->query('SELECT * FROM ' . static::TABLE . ' ORDER BY id DESC LIMIT ' . $num,
             static::class);
 
