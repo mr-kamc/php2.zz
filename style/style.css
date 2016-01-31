@@ -1,0 +1,36 @@
+body {
+    font: 10pt Arial, Helvetica, sans-serif;
+    background: #D0D0D0;
+}
+h2 {
+    font-size: 1.1em;
+    color: #800040;
+    margin-top: 0;
+}
+#container {
+    width: 90%;
+    margin: 0 auto;
+    background: #f0f0f0;
+}
+header {
+    font-size: 2.2em;
+    text-align: center;
+    padding: 5px;
+    background: #1E90FF;
+    color: #ffe;
+}
+nav {
+    float: left;
+    width: 20%;
+    padding-left: 10px;
+}
+article {
+    margin-left: 20%;
+    padding-right: 10px;
+}
+footer {
+    background: #1E90FF;
+    color: #fff;
+    padding: 5px;
+    clear: left;
+}
