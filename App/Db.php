@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 class Db
 {
 
@@ -10,7 +9,10 @@ class Db
 
     function __construct()
     {
-        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test;charset=UTF8', 'root', '131318');
+        $config = Config::instance();
+        $s = $this->dbh = new \PDO('mysql:host=' .$config->data['host']. ';dbname='.$config->data['dbname'].';
+        charset=UTF8', $config->data['user'], $config->data['password']);
+        //$this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test;charset=UTF8', 'root', '131318');
     }
 
     public function execute($sql, $params = [])
