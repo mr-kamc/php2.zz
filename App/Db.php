@@ -6,6 +6,12 @@ class Db extends Singleton
 {
 
     protected $dbh;
+    protected $lastId;
+
+    public function getLastId()
+    {
+        return $this->lastId;
+    }
 
     protected function __construct()
     {

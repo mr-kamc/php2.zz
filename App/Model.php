@@ -63,7 +63,7 @@ abstract class Model
 
     public function update()
     {
-        if($this->isNew()) {
+        if ($this->isNew()) {
             return;
         }
 
@@ -78,14 +78,14 @@ abstract class Model
             $values[':' . $k] = $v;
         }
 
-        $sql = 'UPDATE ' . static::TABLE . ' SET ' . implode(',', $columns) . ' WHERE ' . 'id='.$this->id;
+        $sql = 'UPDATE ' . static::TABLE . ' SET ' . implode(',', $columns) . ' WHERE ' . 'id=' . $this->id;
         $db = Db::instance();
         $db->execute($sql, $values);
     }
 
     public function delete()
     {
-        if($this->isNew()) {
+        if ($this->isNew()) {
             return;
         }
         $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=' . $this->id;
@@ -95,10 +95,9 @@ abstract class Model
 
     public function save()
     {
-        if ($this->isNew()){
+        if ($this->isNew()) {
             $this->insert();
-        }
-        else {
+        } else {
             $this->update();
         }
     }
