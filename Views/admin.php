@@ -16,7 +16,10 @@
     <?php foreach ($news as $article): ?>
         <article>
             <h2><a href = "/App/Controllers/article.php?id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
-            <div><a href = "/App/Controllers/delete.php?id=<?php echo $article->id; ?>">удалить новость</a></div>
+            <div>
+                <a href = "/App/Controllers/delete.php?id=<?php echo $article->id; ?>">удалить новость</a>
+                <a href = "/App/Controllers/update.php?id=<?php echo $article->id; ?>">изменить новость</a>
+            </div>
             <div><?php echo $article->text ?></div>
         </article>
     <?php endforeach; ?>
