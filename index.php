@@ -3,15 +3,18 @@
 use App\Models\User;
 
 require __DIR__ . '/autoload.php';
-/*
+
 $news = \App\Models\News::findLastNews(3);
 
-require __DIR__ . '/Views/news.php';*/
+require __DIR__ . '/Views/news.php';
 
 
-
+/*
 $user = new User();
 $user->name = 'Vasilisa';
 $user->email = 'v@pupkin.ru';
-var_dump($user->findAll());
+$user->id = 5;
+$user->delete();
+*/
+
 

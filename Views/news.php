@@ -10,6 +10,7 @@
     <header><h1>Новости</h1></header>
     <nav>
         <p><a href="/../index.php">На главную</a></p>
+        <p><a href="/App/Controllers/admin.php">Админка</a></p>
     </nav>
     <?php foreach ($news as $article): ?>
     <article>
