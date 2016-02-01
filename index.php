@@ -13,5 +13,5 @@ require __DIR__ . '/Views/news.php';*/
 $user = new User();
 $user->name = 'Vasilisa';
 $user->email = 'v@pupkin.ru';
-$user->insert();
+var_dump($user->findAll());
 

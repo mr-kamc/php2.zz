@@ -59,6 +59,8 @@ abstract class Model
          VALUES (' . implode(',', array_keys($values)) . ')';
         $db = Db::instance();
         $db->execute($sql, $values);
+        $this->id = $db->lastInsertId();
+        var_dump($this->id);
     }
 
     public function update()
