@@ -9,7 +9,6 @@ class View
     use Magic;
 
 
-
     public function display($path)
     {
         echo $this->render($path);
