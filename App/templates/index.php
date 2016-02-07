@@ -20,6 +20,13 @@
 <body>
 <h1>Hello, world!</h1>
 
+<?php foreach($users as $user): ?>
+<div class = "panel panel-default">
+    <div class = "panel-heading"><?php echo $user->name; ?></div>
+    <div class = "panel-body"><?php echo $user->email; ?></div>
+</div>
+
+<?php endforeach; ?>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
