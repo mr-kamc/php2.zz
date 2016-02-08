@@ -44,7 +44,7 @@ abstract class Model
             static::class);
     }
 
-    /**проверка объекта на существование
+    /**проверка на существование записи
      * @return bool
      */
     public function isNew()
