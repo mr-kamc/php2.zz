@@ -8,6 +8,9 @@ abstract class Model
 
     public $id;
 
+    /**получение всех записей из БД
+     * @return mixed
+     */
     public static function findAll()
     {
         $db = Db::instance();
@@ -17,6 +20,10 @@ abstract class Model
         );
     }
 
+    /**получение одной записи из БД по id
+     * @param integer $id
+     * @return bool
+     */
     public static function findOneById($id)
     {
         $db = Db::instance();
@@ -26,6 +33,10 @@ abstract class Model
         )[0] ?: false;
     }
 
+    /**получение $num последних новосей, где $num-кол-во
+     * @param integer $num количество выводимых новостей
+     * @return mixed
+     */
     public static function findLastNews($num)
     {
         $db = Db::instance();
@@ -33,11 +44,17 @@ abstract class Model
             static::class);
     }
 
+    /**проверка объекта на существование
+     * @return bool
+     */
     public function isNew()
     {
         return empty($this->id);
     }
 
+    /**
+     * вставка новой записи в БД
+     */
     public function insert()
     {
         if (!$this->isNew()) {
@@ -63,6 +80,9 @@ abstract class Model
         var_dump($this->id);
     }
 
+    /**
+     * обновление записи в БД
+     */
     public function update()
     {
         if ($this->isNew()) {
@@ -85,6 +105,9 @@ abstract class Model
         $db->execute($sql, $values);
     }
 
+    /**
+     * удаление записи из БД
+     */
     public function delete()
     {
         if ($this->isNew()) {
@@ -95,6 +118,9 @@ abstract class Model
         $db->execute($sql);
     }
 
+    /**
+     * сохранение записи в БД
+     */
     public function save()
     {
         if ($this->isNew()) {
