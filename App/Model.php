@@ -5,8 +5,8 @@ namespace App;
 abstract class Model
 {
     const TABLE = '';
+    const ID = '';
 
-    public $id;
 
     /**получение всех записей из БД
      * @return mixed
@@ -28,7 +28,7 @@ abstract class Model
     {
         $db = Db::instance();
         return $db->query(
-            'SELECT * FROM ' . static::TABLE . ' WHERE id = :id',
+            'SELECT * FROM ' . static::TABLE . ' WHERE '. static::ID .' = :id',
             static::class, [':id' => $id]
         )[0] ?: false;
     }

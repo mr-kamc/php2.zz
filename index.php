@@ -3,13 +3,14 @@
 require __DIR__ . '/autoload.php';
 
 
-$view = new \App\View();
-$view->authors = \App\Models\Author::findAll();
-var_dump($view->authors);
+$news = \App\Models\News::findAll();
+$authors = \App\Models\Author::findAll();
+
 
 /*
 $view = new \App\View();
-$view->users = \App\Models\User::findAll();
+//$view->users = \App\Models\User::findAll();
+$view->users = \App\Models\User::findOneById(1);
 
 echo $view->render(__DIR__ . '/App/templates/index.php');
 */
@@ -17,11 +18,10 @@ echo $view->render(__DIR__ . '/App/templates/index.php');
 /*
 use App\Models\User;
 
-require __DIR__ . '/autoload.php';
 
-$news = \App\Models\News::findLastNews(3);
+$news = \App\Models\Author::findOneById(2);;
 
-require __DIR__ . '/Views/news.php';
+var_dump($news);
 */
 
 /*

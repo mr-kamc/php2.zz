@@ -8,6 +8,7 @@ class User extends Model
     implements HasEmail
 {
     const TABLE = 'users';
+    const ID = 'user_id';
 
     public $email;
     public $name;
