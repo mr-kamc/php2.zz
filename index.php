@@ -3,9 +3,9 @@
 require __DIR__ . '/autoload.php';
 
 
-$authors = new \App\Models\Author();
-$authors->firstName = 'Alex';
-var_dump($authors);
+$view = new \App\View();
+$view->authors = \App\Models\Author::findAll();
+var_dump($view->authors);
 
 /*
 $view = new \App\View();
