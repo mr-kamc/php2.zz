@@ -4,7 +4,12 @@ require __DIR__ . '/autoload.php';
 
 
 $news = \App\Models\News::findAll();
-$authors = \App\Models\Author::findAll();
+
+foreach ($news as $article){
+    var_dump($article);
+    $author = \App\Models\Author::getNameAuthors($article->author_id);
+    var_dump($author);
+}
 
 
 /*
