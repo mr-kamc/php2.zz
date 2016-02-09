@@ -19,11 +19,7 @@ class Author extends Model
         if (empty($id)){
             return false;
         }
-
         $res = self::findOneById($idAuthor);
         return $res->name;
     }
-
-
-
 } 

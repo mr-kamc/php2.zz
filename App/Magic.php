@@ -7,19 +7,19 @@ trait Magic
 {
     protected $data = [];
 
-    public function __set($name, $value)
+    public function __set($k, $v)
     {
-        $this->data[$name] = $value;
+        $this->data[$k] = $v;
     }
 
-    public function __get($name)
+    public function __get($k)
     {
-        return $this->data[$name];
+        return $this->data[$k];
     }
 
-    public function __isset($name)
+    public function __isset($k)
     {
-        return isset($this->data[$name]);
+        return isset($this->data[$k]);
     }
 
 }

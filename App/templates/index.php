@@ -18,6 +18,7 @@
     <![endif]-->
 </head>
 <body>
+<div class = "container">
 <header><h1>Hello, world!</h1></header>
 <nav>
     <p><a href="/../index.php">На главную</a></p>
@@ -39,6 +40,8 @@
     </article>
     <p>Автор - <?php echo $article->author; ?></p>
 <?php endforeach; ?>
+
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
