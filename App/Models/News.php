@@ -44,7 +44,9 @@ class News extends Model
      */
     public function __isset($k)
     {
-        return isset($this->data[$k]);
+        if ('author' == $k && isset($this->author_id)) {
+            return ($this->data[$k]);
+        }
     }
-
 }
+
