@@ -6,7 +6,7 @@ $article = \App\Models\News::findOneById($_GET['id']);
 
 if($article)
 {
-    require __DIR__ . '/../../Views/article.php';
+    require __DIR__ . '/../templates/article.php';
 }
 else
 {

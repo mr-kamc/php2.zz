@@ -2,11 +2,11 @@
 
 require __DIR__ . '/autoload.php';
 
-$news = \App\Models\News::findAll();
-foreach ($news as $article){
-    echo $article->name . '</br>';
-    echo $article->author . '</br>';
-}
+$view = new \App\View();
+$view->news = \App\Models\News::findLastNews(3);
+$view->users = \App\Models\User::findAll();
+
+echo $view->render(__DIR__ . '/App/templates/index.php');
 
 //var_dump($view);
 /*
