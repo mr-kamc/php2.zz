@@ -18,7 +18,11 @@
     <![endif]-->
 </head>
 <body>
-<h1>Hello, world!</h1>
+<header><h1>Hello, world!</h1></header>
+<nav>
+    <p><a href="/../index.php">На главную</a></p>
+    <p><a href="/App/Controllers/admin.php">Админка</a></p>
+</nav>
 
 <?php foreach($this->users as $user): ?>
 <div class = "panel panel-default">
@@ -27,6 +31,15 @@
 </div>
 
 <?php endforeach; ?>
+
+<?php foreach ($news as $article): ?>
+    <article>
+        <h2><a href = "/App/Controllers/article.php?id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
+        <div><?php echo $article->text; ?></div>
+    </article>
+    <p>Автор - <?php echo $article->author; ?></p>
+<?php endforeach; ?>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

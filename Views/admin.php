@@ -12,7 +12,7 @@
         <p><a href="/../index.php">На главную</a></p>
         <p><a href="/Views/admin.php">Админка</a></p>
     </nav>
-    <div><a href = "/App/Views/add.php">добавление новости</a></div>
+    <div><a href = "/Views/add.php">добавление новости</a></div>
     <?php foreach ($news as $article): ?>
         <article>
             <h2><a href = "/App/Controllers/article.php?id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
