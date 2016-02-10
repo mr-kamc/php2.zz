@@ -38,7 +38,7 @@ class News
     {
         $id = (int)$_GET['id'];
         $this->view->article = \App\Models\News::findOneById($id);
-        $this->view->display(__DIR__ . '/../templates/one.php');
+        $this->view->display(__DIR__ . '/../templates/article.php');
     }
 
 }
