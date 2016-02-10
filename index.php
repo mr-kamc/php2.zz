@@ -3,7 +3,10 @@
 require __DIR__ . '/autoload.php';
 
 $controller = new \App\Controllers\News();
-$controller->action('Index');
+
+$action = !empty($_GET['action'])?$_GET['action']:'Index';
+
+$controller->action($action);
 /*
 $view = new \App\View();
 $view->news = \App\Models\News::findLastNews(3);
