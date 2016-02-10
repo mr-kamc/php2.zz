@@ -71,7 +71,6 @@ abstract class Model
             $columns[] = $k;
             $values[':' . $k] = $v;
         }
-
         $sql = 'INSERT INTO ' . static::TABLE . ' (' . implode(',', $columns) . ')
          VALUES (' . implode(',', array_keys($values)) . ')';
         $db = Db::instance();

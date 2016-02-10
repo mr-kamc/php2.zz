@@ -2,12 +2,15 @@
 
 require __DIR__ . '/autoload.php';
 
+$controller = new \App\Controllers\News();
+$controller->action('Index');
+/*
 $view = new \App\View();
 $view->news = \App\Models\News::findLastNews(3);
 $view->users = \App\Models\User::findAll();
 
 echo $view->render(__DIR__ . '/App/templates/index.php');
-
+*/
 //var_dump($view);
 /*
 $news = \App\Models\News::findAll();
