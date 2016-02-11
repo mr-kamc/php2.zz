@@ -35,10 +35,12 @@
 
 <?php foreach ($news as $article): ?>
     <article>
-        <h2><a href = "/App/Controllers/article.php?id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
+        <h2><a href = "/../index.php?action=One&id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
         <div><?php echo $article->text; ?></div>
     </article>
+    <?php if (!empty($article->author)): ?>
     <p>Автор - <?php echo $article->author; ?></p>
+        <?php endif ?>
 <?php endforeach; ?>
 
 </div>

@@ -32,10 +32,13 @@ class News extends Model
      */
     public function __get($k)
     {
-        if('author' == $k && isset($this->author_id)){
-            return Author::getNameAuthors($this->author_id);
+        switch ($k) {
+            case 'author':
+                return Author::getNameAuthors($this->author_id);
+            break;
+            default:
+                return null;
         }
-        return $this->data[$k];
     }
 
     /**магический метод isset
@@ -44,9 +47,14 @@ class News extends Model
      */
     public function __isset($k)
     {
-        if ('author' == $k && isset($this->author_id)) {
-            return ($this->data[$k]);
+        switch ($k) {
+            case 'author':
+                return true;
+            break;
+            default:
+                return null;
         }
+
     }
 }
 
