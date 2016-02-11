@@ -2,12 +2,10 @@
 
 require __DIR__ . '/autoload.php';
 
-//$controller = new \App\Controllers\News();
 $ctrl = !empty($_GET['ctrl']) ? 'App\\Controllers\\' . $_GET['ctrl'] : 'App\Controllers\\News';
 $controller = new $ctrl;
 
 $action = !empty($_GET['action']) ? $_GET['action'] : 'Index';
-
 $controller->action($action);
 /*
 $view = new \App\View();
