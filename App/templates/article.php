@@ -25,7 +25,7 @@
         <p><a href="/../index.php?ctrl=Admin&action=Index">Админка</a></p>
     </nav>
     <article>
-        <h2><a href = "/App/Controllers/article.php?id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
+        <h2><?php echo $article->name; ?></h2>
         <div><?php echo $article->text ?></div>
         <div><?php echo $article->author ?></div>
     </article>

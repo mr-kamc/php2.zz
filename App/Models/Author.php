@@ -15,10 +15,7 @@ class Author extends Model
      * @return bool
      */
     static function getNameAuthors($idAuthor){
-        $id = static::ID;
-        if (empty($id)){
-            return false;
-        }
+
         $res = self::findOneById($idAuthor);
         return $res->name;
     }

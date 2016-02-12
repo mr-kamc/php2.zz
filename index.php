@@ -7,6 +7,8 @@ $controller = new $ctrl;
 
 $action = !empty($_GET['action']) ? $_GET['action'] : 'Index';
 $controller->action($action);
+
+
 /*
 $view = new \App\View();
 $view->news = \App\Models\News::findLastNews(3);
