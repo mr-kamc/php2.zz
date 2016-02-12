@@ -28,7 +28,7 @@ abstract class Model
     {
         $db = Db::instance();
         return $db->query(
-            'SELECT * FROM ' . static::TABLE . ' WHERE '. static::ID .' = :id',
+            'SELECT * FROM ' . static::TABLE . ' WHERE ' . static::ID . ' = :id',
             static::class, [':id' => $id]
         )[0] ?: false;
     }
@@ -71,12 +71,14 @@ abstract class Model
             $columns[] = $k;
             $values[':' . $k] = $v;
         }
+
         $sql = 'INSERT INTO ' . static::TABLE . ' (' . implode(',', $columns) . ')
-         VALUES (' . implode(',', array_keys($values)) . ')';
+            VALUES (' . implode(',', array_keys($values)) . ')';
         $db = Db::instance();
         $db->execute($sql, $values);
+
         $this->id = $db->lastInsertId();
-        var_dump($this->id);
+
     }
 
     /**

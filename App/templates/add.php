@@ -21,11 +21,12 @@
 <div class = "container">
     <header><h1>Hello, world!</h1></header>
     <nav>
-        <p><a href="/../index.php">На главную</a></p>
-        <p><a href="/App/Controllers/admin.php">Админка</a></p>
+        <p><a href="/index.php">На главную</a></p>
+        <p><a href="/index.php?ctrl=Admin&action=Index">Админка</a></p>
     </nav>
 
-    <form action="/App/Controllers/add.php" method = "POST">
+   <!-- <form action="/App/Controllers/add.php" method = "POST">-->
+    <form action="/index.php?ctrl=Admin&action=Save" method = "POST">
         <input type="text" name = "name">
         <input type="text" name = "text">
         <input type="submit">

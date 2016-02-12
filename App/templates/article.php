@@ -22,7 +22,7 @@
     <header><h1>Hello, world!</h1></header>
     <nav>
         <p><a href="/../index.php">На главную</a></p>
-        <p><a href="/App/Controllers/admin.php">Админка</a></p>
+        <p><a href="/../index.php?ctrl=Admin&action=Index">Админка</a></p>
     </nav>
     <article>
         <h2><a href = "/App/Controllers/article.php?id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>

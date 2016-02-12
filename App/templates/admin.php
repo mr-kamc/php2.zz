@@ -21,16 +21,15 @@
 <div class = "container">
     <header><h1>Hello, world!</h1></header>
     <nav>
-        <p><a href="/../index.php">На главную</a></p>
-        <p><a href="/App/Controllers/admin.php">Админка</a></p>
+        <p><a href="/index.php">На главную</a></p>
     </nav>
     <div><a href = "/App/templates/add.php">добавление новости</a></div>
 
     <?php foreach ($news as $article): ?>
         <article>
-            <h2><a href = "/App/Controllers/article.php?id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
+            <h2><a href = "/index.php?action=One&id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
             <div>
-                <a href = "/App/Controllers/delete.php?id=<?php echo $article->id; ?>">удалить новость</a>
+                <a href = "/index.php?ctrl=Admin&action=Del&id=<?php echo $article->id; ?>">удалить новость</a>
                 <a href = "/App/Controllers/update.php?id=<?php echo $article->id; ?>">изменить новость</a>
             </div>
             <div><?php echo $article->text ?></div>
