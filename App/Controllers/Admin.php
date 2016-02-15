@@ -17,6 +17,9 @@ class Admin
         echo $this->view->render(__DIR__ . '/../templates/admin.php');
     }
 
+    /**
+     * удаление новости
+     */
     protected function actionDel()
     {
         $news = new News();
