@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use App\Models\News;
 use App\Models\User;
+use App\MultiException;
 
 class Admin
     extends AbstractController
@@ -43,6 +44,21 @@ class Admin
         } else {
             header('Location: /index.php');
         }
+    }
+
+
+
+    protected function actionCreate()
+    {
+
+        try {
+            $article = new News();
+            $article->fill([]);
+            $article->save();
+        } catch (MultiException $e) {
+            $this->view->errors = $e;
+        }
+        echo $this->view->render(__DIR__ . '/../templates/update.php');
     }
 
 }

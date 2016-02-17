@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 
+use App\MultiException;
 use App\View;
 
 class News
