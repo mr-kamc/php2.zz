@@ -45,21 +45,4 @@ class Admin
         }
     }
 
-    protected function actionEdit()
-    {
-        $post = $_POST;
-        if (!empty($post)) {
-            $article = new News();
-            $article->name = $post['name'];
-            $article->text = $post['text'];
-            $article->author_id = 2;
-            $article->save();
-
-            header('Location: /index.php');
-        } else {
-            header('Location: /index.php');
-        }
-    }
-
-
 }

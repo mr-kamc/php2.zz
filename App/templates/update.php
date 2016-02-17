@@ -24,7 +24,7 @@
         <p><a href="/../index.php">На главную</a></p>
         <p><a href="/index.php?ctrl=Admin&action=Index">Админка</a></p>
     </nav>
-    <form action="/index.php?ctrl=Admin&action=Edit" method = "POST">
+    <form action="/index.php?ctrl=Admin&action=Save" method = "POST">
         <input type="text" name = "name" value="<?php echo $article->name; ?>">
         <input type="text" name = "text" value="<?php echo $article->text; ?>">
         <input type="submit">
