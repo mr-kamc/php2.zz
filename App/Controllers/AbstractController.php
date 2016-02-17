@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 
+use App\Exceptions\Core;
 use App\View;
 
 class AbstractController
@@ -23,6 +24,9 @@ class AbstractController
 
     protected function beforeAction()
     {
+       // $ex = new Core('Сообщение исключения');
+
+       // throw $ex;
 
     }
 

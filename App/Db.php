@@ -15,9 +15,13 @@ class Db extends Singleton
     protected function __construct()
     {
         $config = Config::instance();
-        $s = $this->dbh = new \PDO('mysql:host=' .$config->data['host']. ';dbname='.$config->data['dbname'].';
-        charset=UTF8', $config->data['user'], $config->data['password']);
-        //$this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test;charset=UTF8', 'root', '131318');
+        try {
+            $this->dbh = new \PDO('mysql:host=' . $config->data['host'] . ';dbname=' . $config->data['dbname'] . ';
+            charset=UTF8', $config->data['user'], $config->data['password']);
+        } catch (\PDOException $e) {
+            throw new \App\Exceptions\Db($e->getMessage());
+        }
+
     }
 
     public function execute($sql, $params = [])
