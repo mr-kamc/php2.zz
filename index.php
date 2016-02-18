@@ -6,6 +6,12 @@ $ctrl = !empty($_GET['ctrl']) ? 'App\\Controllers\\' . $_GET['ctrl'] : 'App\Cont
 $controller = new $ctrl;
 
 $action = !empty($_GET['action']) ? $_GET['action'] : 'Index';
+$url = 'http://php2.zz/App/Controllers/Admin/Index';
+//разбираем url
+$path =explode('/',parse_url($url,PHP_URL_PATH));
+var_dump($path);
+die;
+
 
 try {
     $controller->action($action);

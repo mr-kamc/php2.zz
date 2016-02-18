@@ -23,6 +23,7 @@
 <nav>
     <p><a href="/index.php">На главную</a></p>
     <p><a href="/index.php?ctrl=Admin&action=Index">Админка</a></p>
+    <p><a href="/App/Controllers/Admin/Index">Админка</a></p>
 </nav>
 
 <?php foreach($this->users as $user): ?>
