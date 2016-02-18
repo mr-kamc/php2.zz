@@ -15,7 +15,7 @@ class News extends Model
     public $text;
     public $author_id;
 
-    protected $data = [];
+    //protected $data = [];
 
     /**метод __set устанавливает значение при обращении к несуществующему свойству
      * данного класса

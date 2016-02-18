@@ -30,7 +30,7 @@
             <h2><a href = "/index.php?action=One&id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
             <div>
                 <a href = "/index.php?ctrl=Admin&action=Del&id=<?php echo $article->id; ?>">удалить новость</a>
-                <a href = "/App/Controllers/update.php?id=<?php echo $article->id; ?>">изменить новость</a>
+                //<a href = "/App/Controllers/update.php?id=<?php echo $article->id; ?>">изменить новость</a>
             </div>
             <div><?php echo $article->text ?></div>
         </article>

@@ -19,11 +19,13 @@
 </head>
 <body>
 
-<?php foreach($errors as $error): ?>
-    <div class = "alert alert-danger">
-        <?php echo $error->getMessage(); ?>
-    </div>
-<?php endforeach; ?>
+<?php if (isset($errors)): ?>
+    <?php foreach($errors as $error): ?>
+        <div class = "alert alert-danger">
+            <?php echo $error->getMessage(); ?>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>
 <div class = "container">
     <header><h1>Hello, world!</h1></header>
     <nav>
@@ -31,6 +33,7 @@
         <p><a href="/index.php?ctrl=Admin&action=Index">Админка</a></p>
     </nav>
     <form action="/index.php?ctrl=Admin&action=Save" method = "POST">
+        <input type = "hidden" name = "id" value = <?php echo $article->id; ?>>
         <input type="text" name = "name" value="<?php
         if (!empty($article->name))
         {

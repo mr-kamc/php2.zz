@@ -13,4 +13,6 @@ try {
     echo 'Возникло исключение ' . $e->getMessage();
 } catch (\App\Exceptions\Db $e) {
     echo 'Что-то не так с базой ' . $e->getMessage();
+} catch (\App\MultiException $e) {
+    echo 'Что-то не так с базой ' . $e->getMessage();
 }

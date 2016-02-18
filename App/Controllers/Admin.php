@@ -35,6 +35,9 @@ class Admin
         $post = $_POST;
         if (!empty($post)) {
             $article = new News();
+            if (isset($post['id'])) {
+                $article->id = $post['id'];
+            }
             $article->name = $post['name'];
             $article->text = $post['text'];
             $article->author_id = 2;

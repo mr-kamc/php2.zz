@@ -71,9 +71,13 @@ abstract class Model
             $columns[] = $k;
             $values[':' . $k] = $v;
         }
+        $sql = '
+INSERT INTO ' . static::TABLE . '
+(' . implode(',', $columns) . ')
+VALUES (' . implode(',', array_keys($values)) . ')';
 
-        $sql = 'INSERT INTO ' . static::TABLE . ' (' . implode(',', $columns) . ')
-            VALUES (' . implode(',', array_keys($values)) . ')';
+
+
         $db = Db::instance();
         $db->execute($sql, $values);
 
@@ -89,7 +93,6 @@ abstract class Model
         if ($this->isNew()) {
             return;
         }
-
         $columns = [];
         $values = [];
 
@@ -101,7 +104,11 @@ abstract class Model
             $values[':' . $k] = $v;
         }
 
-        $sql = 'UPDATE ' . static::TABLE . ' SET ' . implode(',', $columns) . ' WHERE ' . 'id=' . $this->id;
+        $sql = '
+        UPDATE ' . static::TABLE . '
+         SET ' . implode(',', $columns) . '
+          WHERE ' . static::ID . '=' . $this->id;
+
         $db = Db::instance();
         $db->execute($sql, $values);
     }
@@ -115,8 +122,11 @@ abstract class Model
             return;
         }
         $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=' . $this->id;
+
+        var_dump($sql);
+        die;
         $db = Db::instance();
-        $db->execute($sql);
+        $db->execute($sql, $values);
     }
 
     /**
