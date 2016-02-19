@@ -123,10 +123,9 @@ VALUES (' . implode(',', array_keys($values)) . ')';
         }
         $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=' . $this->id;
 
-        var_dump($sql);
-        die;
+
         $db = Db::instance();
-        $db->execute($sql, $values);
+        $db->execute($sql);
     }
 
     /**

@@ -21,9 +21,8 @@
 <div class = "container">
 <header><h1>Hello, world!</h1></header>
 <nav>
-    <p><a href="/index.php">На главную</a></p>
-    <p><a href="/index.php?ctrl=Admin&action=Index">Админка</a></p>
-    <p><a href="/App/Controllers/Admin/Index">Админка</a></p>
+    <p><a href="/">На главную</a></p>
+    <p><a href="/Admin/Index">Админка</a></p>
 </nav>
 
 <?php foreach($this->users as $user): ?>
@@ -36,7 +35,8 @@
 
 <?php foreach ($news as $article): ?>
     <article>
-        <h2><a href = "/index.php?action=One&id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
+        <h2><a href = "/News/One/?id=<?php echo $article->id ?>"><?php echo $article->name; ?></a></h2>
+
         <div><?php echo $article->text; ?></div>
     </article>
     <?php if (!empty($article->author)): ?>

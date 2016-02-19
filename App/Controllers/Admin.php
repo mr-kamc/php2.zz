@@ -27,7 +27,7 @@ class Admin
         $news->id = $_GET['id'];
         $news->delete();
 
-        header('Location: /index.php');
+        header('Location: /');
     }
 
     protected function actionSave()
@@ -43,9 +43,9 @@ class Admin
             $article->author_id = 2;
             $article->save();
 
-            header('Location: /index.php');
+            header('Location: /');
         } else {
-            header('Location: /index.php');
+            header('Location: /');
         }
     }
 
