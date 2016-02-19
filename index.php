@@ -43,7 +43,9 @@ if (!method_exists($controller,'action' . $action)){
 } catch (\App\Exceptions\Core $e) {
     echo 'Возникло исключение ' . $e->getMessage();
 } catch (\App\Exceptions\Db $e) {
-    echo 'Что-то не так с базой ' . $e->getMessage();
+    $error = new \App\Controllers\Error();
+    $error->error($e->getMessage());
+  //  echo 'Что-то не так с базой ' . $e->getMessage();
 } catch (\App\MultiException $e) {
     echo 'Что-то не так с базой ' . $e->getMessage();
 }
