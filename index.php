@@ -33,8 +33,13 @@ switch(count($pathRev)) {
 
 try {
     $controller = new $ctrl;
-
+if (!method_exists($controller,'action' . $action)){
+    throw new \App\Exceptions\Error404();
+}
     $controller->action($action);
+} catch (\App\Exceptions\Error404 $e) {
+    $error = new \App\Controllers\Error();
+    $error->action404();
 } catch (\App\Exceptions\Core $e) {
     echo 'Возникло исключение ' . $e->getMessage();
 } catch (\App\Exceptions\Db $e) {
