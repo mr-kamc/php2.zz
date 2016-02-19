@@ -38,9 +38,14 @@ class Admin
             if (isset($post['id'])) {
                 $article->id = $post['id'];
             }
+            $article->fill($post);
+            /*
             $article->name = $post['name'];
             $article->text = $post['text'];
             $article->author_id = 2;
+            */
+            var_dump($article);
+            die;
             $article->save();
 
             header('Location: /');

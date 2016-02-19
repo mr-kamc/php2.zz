@@ -13,9 +13,7 @@ $pathRev = array_reverse($path);
 
 
 switch(count($pathRev)) {
-    case 1:
-        echo 'в кейсе-1';
-        break;
+
     case 2:
         $ctrl = !empty($pathRev[0]) ? 'App\\Controllers\\' . $pathRev[0] : 'App\Controllers\\News';
         $action = 'Index';

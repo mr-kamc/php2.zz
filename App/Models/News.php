@@ -59,6 +59,15 @@ class News extends Model
     }
 
     public function fill($data = []) {
+
+
+
+        $this->name = $data['name'];
+        $this->text = $data['text'];
+        $this->author_id = 2;
+
+
+
         $e = new MultiException();
         if (true) {
             $e[] = new \Exception('Заголовок неверный');
@@ -67,6 +76,7 @@ class News extends Model
             $e[] = new \Exception('Текст неверный');
         }
         throw $e;
+        return $this;
     }
 }
 
