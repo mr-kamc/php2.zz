@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Exceptions\Core;
 use App\Model;
 use App\MultiException;
 
@@ -60,23 +61,19 @@ class News extends Model
 
     public function fill($data = []) {
 
-
-
         $this->name = $data['name'];
         $this->text = $data['text'];
         $this->author_id = 2;
 
-
-
         $e = new MultiException();
-        if (true) {
+        if (empty($this->name)) {
             $e[] = new \Exception('Заголовок неверный');
+            throw $e;
         }
-        if (true) {
+        if (empty($this->text)) {
             $e[] = new \Exception('Текст неверный');
         }
-        throw $e;
-        return $this;
+
     }
 }
 
