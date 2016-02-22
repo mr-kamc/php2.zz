@@ -45,5 +45,6 @@ if (!method_exists($controller,'action' . $action)){
     $error->error($e->getMessage());
   //  echo 'Что-то не так с базой ' . $e->getMessage();
 } catch (\App\MultiException $e) {
-    echo $e->getMessage();
+    $error = new \App\Controllers\Error();
+    $error->errorForm($e);
 }

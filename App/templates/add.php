@@ -19,6 +19,13 @@
 </head>
 <body>
 <div class = "container">
+    <?php if(isset($errors)): ?>
+    <?php foreach($errors as $el):; ?>
+            <div class = "alert alert-danger">
+                <?php echo $el->getMessage(); ?>
+            </div>
+    <?php endforeach; ?>
+    <?php endif; ?>
     <header><h1>Hello, world!</h1></header>
     <nav>
         <p><a href="/">На главную</a></p>

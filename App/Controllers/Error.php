@@ -15,5 +15,10 @@ extends AbstractController
         $this->view->error = $e;
         echo $this->view->render(__DIR__ . '/../templates/error.php');
     }
+    public function errorForm($e)
+    {
+        $this->view->errors = $e;
+        echo $this->view->render(__DIR__ . '/../templates/add.php');
+    }
 
 } 
