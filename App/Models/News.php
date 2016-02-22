@@ -67,10 +67,10 @@ class News extends Model
 
         $e = new MultiException();
         if (empty($this->name)) {
-            $e[] = new \Exception('Заголовок неверный');
+            $e[] = new \Exception('Заголовок пустой');
         }
         if (empty($this->text)) {
-            $e[] = new \Exception('Текст неверный');
+            $e[] = new \Exception('Текст пустой');
         }
         throw $e;
 
